@@ -1,0 +1,60 @@
+/* Admin Login Styles */
+
+body {
+    background-color: #f8f9fa; /* Light background color for the body */
+}
+
+.navbar {
+    margin-bottom: 20px; /* Space below the navbar */
+}
+
+.card {
+    border: none; /* Remove default card border */
+    border-radius: 10px; /* Rounded corners for the card */
+}
+
+.card-body {
+    padding: 2rem; /* Add padding inside the card */
+}
+
+.card-title {
+    font-weight: bold; /* Bold title text */
+    color: #343a40; /* Dark color for the title */
+}
+
+.form-label {
+    font-weight: 500; /* Medium weight for labels */
+}
+
+.btn {
+    border-radius: 5px; /* Rounded corners for buttons */
+    font-weight: bold; /* Bold text for buttons */
+}
+
+.btn-primary {
+    background-color: #007bff; /* Primary button color */
+    border-color: #007bff; /* Border color for primary button */
+}
+
+.btn-secondary {
+    background-color: #6c757d; /* Secondary button color */
+    border-color: #6c757d; /* Border color for secondary button */
+}
+
+.footer {
+    background-color: #f1f1f1; /* Light footer background */
+    position: relative; /* Allow footer to be positioned */
+    bottom: 0;
+    width: 100%;
+}
+
+.footer p {
+    margin: 0; /* Remove default margin */
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .card {
+        margin: 0 15px; /* Add margin for smaller screens */
+    }
+}

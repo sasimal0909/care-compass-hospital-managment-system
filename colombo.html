@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="colombo.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colombo Branch - Care Compass Hospital</title>
+    <link rel="stylesheet" href="bootstrap-5.3.3-dist/css/bootstrap.css">
+    <style>
+        body {
+            background: url('colombo_branch.jpg') no-repeat center center fixed; /* Background image */
+            background-size: cover; /* Cover the entire viewport */
+            color: #fff; /* White text for better contrast */
+        }
+        .card {
+            background: rgba(255, 255, 255, 0.9); /* Light background for cards with some transparency */
+            border: none; /* Remove default border */
+            color: #000; /* Black text for better readability */
+        }
+        .footer {
+            background-color: rgba(0, 0, 0, 0.8); /* Dark footer */
+            color: #fff;
+        }
+        h1, h2 {
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Text shadow for better visibility */
+        }
+        .feedback-button {
+            position: fixed; /* Position the feedback button */
+            bottom: 20px;
+            right: 20px;
+            background-color: #007bff; /* Bootstrap primary color */
+            color: #fff;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .feedback-form {
+            position: fixed; /* Position the feedback form */
+            bottom: 70px;
+            right: 20px;
+            background-color: rgba(255, 255, 255, 0.9); /* Light background for feedback form */
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Shadow for better visibility */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#"><img src="logo1.png" alt="logo" height="40"> Care Compass Hospital</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="admin_profile.html">Profile</a></li>
+                    <li class="nav-item"><a class="nav-link" href="manage_users.html">Manage Users</a></li>
+                    <li class="nav-item"><a class="nav-link" href="settings.html">Settings</a></li>
+                    <li class="nav-item"><a class="nav-link" href="logout.html">Logout</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Branch Section -->
+    <section class="container my-5">
+        <h1 class="text-center mb-4">Colombo Branch</h1>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h2 class="card-title">Branch Details</h2>
+                        <p class="card-text">Address: 789 Colombo Rd, Colombo, Sri Lanka</p>
+                        <p class="card-text">Phone: +94 77 654 3210</p>
+                        <p class="card-text">Email: colombo@carecompass.com</p>
+                        <p class="card-text">Operating Hours: Mon-Sat 8:00 AM - 6:00 PM</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h2 class="card-title">Available Services</h2>
+                        <ul class="list-unstyled">
+                            <li>General Consultation</li>
+                            <li>Emergency Services</li>
+                            <li>Pharmacy</li>
+                            <li>Laboratory Services</li>
+                            <li>Orthopedic Services</li>
+                            <li>Diagnostic Imaging</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h2 class="card-title">Meet Our Doctors</h2>
+                        <ul class="list-unstyled">
+                            <li>Dr. Alan Grant - General Practitioner</li>
+                            <li>Dr. Lisa Taylor - Pediatrician</li>
+                            <li>Dr. Richard Roe - Surgeon</li>
+                            <li>Dr. Susan Black - Orthopedic Surgeon</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="feedback-button" onclick="toggleFeedback()">Feedback</div>
+
+    <div id="feedback-form" class="feedback-form" style="display:none;">
+        <h4>Send us your Feedback</h4>
+        <form action="feedback.php" method="POST">
+            <textarea name="feedback" class="form-control" placeholder="Your feedback..." required></textarea>
+            <button type="submit" class="btn btn-primary mt-2">Send</button>
+        </form>
+    </div> 
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="bootstrap-5.3.3-dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="scripts/main.js"></script>
+
+    <script>
+        function toggleFeedback() {
+            let form = document.getElementById('feedback-form');
+            form.style.display = (form.style.display === 'block') ? 'none' : 'block';
+        }
+    </script>
+
+    <!-- Footer -->
+    <footer class="footer text-center py-4">
+        <p>&copy; 2024 Care Compass Hospital. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

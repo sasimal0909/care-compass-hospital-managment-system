@@ -1,0 +1,98 @@
+/* General Body Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 0;
+}
+
+/* Navbar Styles */
+.navbar {
+    background-color: #007bff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand {
+    color: white !important;
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.navbar-nav .nav-link {
+    color: #ffffff;
+    padding: 8px 15px;
+}
+
+.navbar-nav .nav-link:hover {
+    background-color: #0056b3;
+}
+
+/* Dashboard Styles */
+section {
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+/* Admin Tools Sidebar */
+.card {
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.card-body {
+    padding: 2rem;
+    background-color: #ffffff;
+}
+
+.card-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.card .btn-link {
+    text-decoration: none;
+    color: #007bff;
+    font-size: 1.1rem;
+}
+
+.card .btn-link:hover {
+    color: #0056b3;
+}
+
+/* Stats Cards */
+.card-body h5 {
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+.card-body p {
+    font-size: 1.1rem;
+}
+
+/* Footer */
+.footer {
+    background-color: #007bff;
+    color: white;
+    padding: 20px 0;
+    margin-top: 40px;
+}
+
+.footer p {
+    margin: 0;
+}
+
+/* Responsive Styling */
+@media (max-width: 767px) {
+    .navbar-brand {
+        font-size: 1.2rem;
+    }
+
+    .card {
+        width: 100%;
+    }
+
+    .col-md-4 {
+        margin-bottom: 20px;
+    }
+}

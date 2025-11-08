@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Care Compass Hospital</title>
+    <link rel="stylesheet" href="bootstrap-5.3.3-dist/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="admin_login.css">
+    <link rel="stylesheet" type="text/css" href="feedback.css">
+    <style>
+        body {
+            background: url('patientdb.jpg') no-repeat center center fixed;
+            background-size: cover;
+        }
+        .card {
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="#"><img src="logo1.png" alt="logo" height="40"> Care Compass Hospital</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="patient_profile.html">Profile</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" onclick="checkLogin('appointments.html')">Appointments</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="medical_records.html">Medical Records</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="feedback.html">Feedback</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="welcome.html">Logout</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Dashboard Welcome Section -->
+    <div class="container my-5">
+        <h2 class="text-center">Welcome, Patient Login</h2>
+        <p class="text-center">Here you can manage your health information and services.</p>
+
+        <div class="row mt-4">
+            <div class="col-md-4">
+                <div class="card text-center">
+                    <div class="card-body">
+                        <h5 class="card-title">My Appointments</h5>
+                        <p class="card-text">View and manage your upcoming appointments.</p>
+                        <a href="#" onclick="checkLogin('appointment.html')" class="btn btn-primary">View Appointments</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card text-center">
+                    <div class="card-body">
+                        <h5 class="card-title">Medical Records</h5>
+                        <p class="card-text">Access your medical history and reports.</p>
+                        <a href="medical_records.html" class="btn btn-primary">View Records</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card text-center">
+                    <div class="card-body">
+                        <h5 class="card-title">Feedback</h5>
+                        <p class="card-text">Provide feedback about your experience.</p>
+                        <a href="feedback.html" class="btn btn-primary">Give Feedback</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="feedback-button" onclick="toggleFeedback()">Feedback</div>
+
+    <div id="feedback-form" class="feedback-form" style="display:none;">
+        <h4>Send us your Feedback</h4>
+        <form action="feedback.php" method="POST">
+            <textarea name="feedback" class="form-control" placeholder="Your feedback..." required></textarea>
+            <button type="submit" class="btn btn-primary mt-2">Send</button>
+        </form>
+    </div> 
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="bootstrap-5.3.3-dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="scripts/main.js"></script>
+
+    <script>
+        function toggleFeedback() {
+            let form = document.getElementById('feedback-form');
+            form.style.display = (form.style.display === 'block') ? 'none' : 'block';
+        }
+
+        function submitFeedback() {
+            let feedback = document.getElementById('feedback-text').value;
+            if (feedback.trim() === '') {
+                alert('Please enter your feedback.');
+                return;
+            }
+            alert('Thank you for your feedback!');
+            document.getElementById('feedback-text').value = '';
+            document.getElementById('feedback-form').style.display = 'none';
+        }
+
+        function checkLogin(page) {
+            let isLoggedIn = true; // Replace this with actual login check
+            if (isLoggedIn) {
+                window.location.href = page;
+            } else {
+                alert('Please log in first.');
+                window.location.href = 'welcome.html';
+            }
+        }
+    </script>
+
+    <!-- Footer -->
+    <footer class="footer text-center py-4">
+        <p>&copy; 2024 Care Compass Hospital. All rights reserved.</p>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="bootstrap-5.3.3-dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

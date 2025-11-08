@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Care Compass Hospital</title>
+    <link rel="stylesheet" href="bootstrap-5.3.3-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="dashboard.css">
+    <style>
+        body {
+            background: url('1000.jpg') no-repeat center center fixed; /* Add your background image */
+            background-size: cover; /* Cover the entire viewport */
+            height: 100vh; /* Full height of the viewport */
+        }
+        .card {
+            background: rgba(255, 255, 255, 0.9); /* Slight transparency for cards */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="#"><img src="logo1.png" alt="logo" height="40"> Care Compass Hospital</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="admin_profile.html">Profile</a></li>
+                    <li class="nav-item"><a class="nav-link" href="manage_users.html">Manage Users</a></li>
+                    <li class="nav-item"><a class="nav-link" href="settings.html">Settings</a></li>
+                    <li class="nav-item"><a class="nav-link" href="logout.html">Logout</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Admin Dashboard Section -->
+    <section class="container my-5">
+        <div class="row">
+            <div class="col-lg-3">
+                <div class="card shadow">
+                    <div class="card-body">
+                        <h5 class="card-title">Admin Tools</h5>
+                        <ul class="list-unstyled">
+                            <li><a href="manage_users.html" class="btn btn-link">Manage Users</a></li>
+                            <li><a href="appointments.html" class="btn btn-link">View Appointments</a></li>
+                            <li><a href="view_feedback.html" class="btn btn-link">View Feedback</a></li>
+                            <li><a href="doctor_signup.html" class="btn btn-link">Add Doctor</a></li>
+                            <li><a href="appointment.html" class="btn btn-link">Add Appointment</a></li>
+                            <li><a href="add_department.html" class="btn btn-link">Add Department</a></li>
+                            <li><a href="settings.html" class="btn btn-link">Settings</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-9">
+                <div class="card shadow">
+                    <div class="card-body">
+                        <h4 class="card-title">Welcome, Admin!</h4>
+                        <p>Here you can manage the hospital's operations. Use the left sidebar to navigate through different sections.</p>
+                    </div>
+                </div>
+                <div class="mt-4">
+                    <!-- Stats Cards (for appointments, feedback, etc.) -->
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="card shadow">
+                                <div class="card-body">
+                                    <h5 class="card-title">Total Appointments</h5>
+                                    <p class="card-text">150</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card shadow">
+                                <div class="card-body">
+                                    <h5 class="card-title">Feedback</h5>
+                                    <p class="card-text">25 new feedbacks</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card shadow">
+                                <div class="card-body">
+                                    <h5 class="card-title">Active Users</h5>
+                                    <p class="card-text">80</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+        <!-- Feedback Button -->
+        <div class="feedback-button" onclick="toggleFeedback()">Feedback</div>
+    
+        <!-- Feedback Form -->
+        <div id="feedback-form" class="feedback-form" style="display:none;">
+            <h4>Send us your Feedback</h4>
+            <form action="feedback.php" method="POST">
+                <textarea name="feedback" class="form-control" placeholder="Your feedback..." required></textarea>
+                <button type="submit" class="btn btn-primary mt-2">Send</button>
+            </form>
+        </div>  
+    
+        <!-- Bootstrap JS and dependencies -->
+        <script src="bootstrap-5.3.3-dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Custom JS -->
+        <script src="scripts/main.js"></script>
+    
+        <script>
+            function toggleFeedback() {
+                let form = document.getElementById('feedback-form');
+                form.style.display = (form.style.display === 'block') ? 'none' : 'block';
+            }
+    
+            function submitFeedback() {
+                let feedback = document.getElementById('feedback-text').value;
+                if (feedback.trim() === '') {
+                    alert('Please enter your feedback.');
+                    return;
+                }
+                alert('Thank you for your feedback!');
+                document.getElementById('feedback-text').value = '';
+                document.getElementById('feedback-form').style.display = 'none';
+            }
+        </script>
+
+    <!-- Footer -->
+    <footer class="footer text-center py-4">
+        <p>&copy; 2024 Care Compass Hospital. All rights reserved.</p>
+    </footer>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="bootstrap-5.3.3-dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

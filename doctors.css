@@ -1,0 +1,60 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background-color: #f0f8ff; /* Light blue background */
+}
+
+h1 {
+    text-align: center;
+    color: #2c3e50; /* Dark navy for header */
+    margin-bottom: 20px;
+}
+
+.doctor-card {
+    border: 1px solid #3498db; /* Light blue border */
+    border-radius: 5px; /* Rounded corners */
+    padding: 15px; /* Padding inside the card */
+    margin: 10px 0; /* Margin between cards */
+    background-color: #ffffff; /* White background for cards */
+    display: flex; /* Flexbox layout */
+    align-items: center; /* Center items vertically */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease; /* Smooth transitions */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15); /* Soft shadow */
+    cursor: pointer; /* Change cursor to pointer on hover */
+}
+
+.doctor-card:hover {
+    transform: scale(1.02); /* Slightly enlarge card on hover */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* Increase shadow on hover */
+    background-color: #ecf0f1; /* Light gray background on hover */
+}
+
+.doctor-photo {
+    width: 100px; /* Set width of doctor photo */
+    height: 100px; /* Set height of doctor photo */
+    border-radius: 5px; /* Rounded corners */
+    margin-right: 15px; /* Space between photo and text */
+    border: 3px solid #3498db; /* Light blue border around photo */
+}
+
+.doctor-name {
+    font-size: 1.5em; /* Large font for doctor name */
+    color: #2980b9; /* Medium blue color for doctor name */
+}
+
+.doctor-specialty {
+    font-weight: bold; /* Bold font for specialty */
+    color: #8e44ad; /* Purple color for specialty */
+}
+
+.doctor-contact,
+.doctor-email {
+    margin-top: 10px; /* Space above contact and email */
+    color: #555; /* Dark gray color for contact details */
+}
+
+/* New CSS class for clicked state */
+.clicked {
+    background-color: #e74c3c; /* Red color for clicked state */
+    color: #fff; /* White text color */
+}

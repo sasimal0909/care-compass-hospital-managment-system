@@ -1,0 +1,116 @@
+/* Global Styles */
+html, body {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Carousel Styles */
+.carousel-item {
+    height: 100vh; /* Full height */
+}
+
+.carousel-item img {
+    object-fit: cover; /* Cover the entire area */
+    height: 100%; /* Ensure the image covers the height */
+    width: 100%; /* Ensure the image covers the width */
+}
+
+/* Carousel Caption Styles */
+.carousel-caption {
+    position: absolute;
+    bottom: 20%; /* Position from the bottom */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, 0); /* Offset for horizontal centering */
+    color: white;
+    text-align: center;
+    padding: 20px; /* Padding around the text */
+    border-radius: 8px; /* Rounded corners */
+    opacity: 0; /* Start hidden */
+    animation: fadeInUp 0.5s forwards, colorChange 3s infinite; /* Animation to fade in and slide up */
+}
+
+.carousel-item.active .carousel-caption {
+    opacity: 1; /* Make it visible when active */
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0; /* Start fully transparent */
+        transform: translate(-50%, 20px); /* Start from below */
+    }
+    100% {
+        opacity: 1; /* End fully visible */
+        transform: translate(-50%, 0); /* End at normal position */
+    }
+}
+
+@keyframes colorChange {
+    0% { background-color: rgba(255, 0, 0, 0.7); }
+    33% { background-color: rgba(0, 255, 0, 0.7); }
+    66% { background-color: rgba(0, 0, 255, 0.7); }
+    100% { background-color: rgba(255, 0, 0, 0.7); }
+}
+
+/* Hero Section Styles */
+.hero-section {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 100px 0;
+    color: white;
+}
+
+.feature-card {
+    background: #f8f9fa;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Feedback Button Styles */
+.feedback-button {
+    cursor: pointer;
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-align: center;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+/* Feedback Form Styles */
+.feedback-form {
+    position: fixed;
+    bottom: 80px;
+    right: 20px;
+    background-color: white;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+}
+
+/* Footer Styles */
+.footer {
+    background-color: #343a40;
+    padding: 20px;
+    position: relative; /* Ensure it’s positioned normally */
+    bottom: 0; /* Position at the bottom */
+    width: 100%; /* Full width */
+    z-index: 1000; /* Ensure it stays above other content */
+}
+
+.footer p {
+    margin: 0;
+    color: #ffffff; /* Text color */
+}
+
+.footer ul {
+    list-style: none; /* Remove bullet points */
+    padding: 0; /* Remove padding */
+}
+
+.footer li {
+    margin: 5px 0; /* Add spacing between list items */
+}

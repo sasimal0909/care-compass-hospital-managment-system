@@ -1,0 +1,64 @@
+/* General Body Styles */
+body {
+    background-image: url('background.jpg'); /* Background image path */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif; /* Change font as needed */
+}
+
+/* Navbar Styles */
+.navbar {
+    background-color: rgba(255, 255, 255, 0.9); /* Light background with slight transparency */
+}
+
+.navbar-brand img {
+    margin-right: 10px; /* Spacing between logo and text */
+}
+
+/* Card Styles */
+.card {
+    background-color: rgba(255, 255, 255, 0.8); /* Card background with slight transparency */
+    border: none; /* No border */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Shadow effect */
+}
+
+/* Card Title Styles */
+.card-title {
+    color: #007bff; /* Change to your preferred color */
+}
+
+/* Form Styles */
+.form-label {
+    font-weight: bold; /* Bold labels */
+}
+
+.form-control {
+    border-radius: 5px; /* Rounded input fields */
+    border: 1px solid #ced4da; /* Border color */
+}
+
+/* Button Styles */
+.btn-primary {
+    background-color: #007bff; /* Button background color */
+    border-color: #007bff; /* Button border color */
+    border-radius: 5px; /* Rounded button */
+}
+
+.btn-primary:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+    border-color: #004085; /* Darker border on hover */
+}
+
+/* Footer Styles */
+.footer {
+    background-color: rgba(255, 255, 255, 0.9); /* Light background with slight transparency */
+    position: fixed; /* Fixed at the bottom */
+    width: 100%; /* Full width */
+    bottom: 0; /* Stick to bottom */
+    padding: 10px 0; /* Padding */
+    color: #333; /* Text color */
+}

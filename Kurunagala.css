@@ -1,0 +1,45 @@
+/* Global Styles */
+body {
+    background: url('kurunagala_background.jpg') no-repeat center center fixed; /* Background image */
+    background-size: cover; /* Cover the entire viewport */
+    color: #fff; /* White text for better contrast */
+    font-family: Arial, sans-serif; /* Set a default font */
+}
+
+h1, h2 {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Text shadow for better visibility */
+}
+
+/* Navbar Styles */
+.navbar {
+    margin-bottom: 20px; /* Spacing below navbar */
+}
+
+/* Card Styles */
+.card {
+    background: rgba(0, 0, 0, 0.7); /* Dark background for cards with some transparency */
+    border: none; /* Remove default border */
+    border-radius: 10px; /* Rounded corners */
+}
+
+.card-title {
+    font-size: 1.5rem; /* Increase font size for card titles */
+    margin-bottom: 15px; /* Spacing below card titles */
+}
+
+/* Footer Styles */
+.footer {
+    background-color: rgba(0, 0, 0, 0.8); /* Dark footer */
+    color: #fff; /* White text in footer */
+    padding: 20px 0; /* Padding for footer */
+    position: relative; /* Positioning for footer */
+    bottom: 0; /* Stick to the bottom */
+    width: 100%; /* Full width */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .navbar-nav {
+        text-align: center; /* Center align navbar items on small screens */
+    }
+}

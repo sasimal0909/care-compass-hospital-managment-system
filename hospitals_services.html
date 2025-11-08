@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospital Services - Care Compass Hospital</title>
+    <link rel="stylesheet" href="bootstrap-5.3.3-dist/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <style>
+        body {
+            background: url('hospital_services.jpg') no-repeat center center fixed; /* Background image */
+            background-size: cover; /* Cover the entire viewport */
+            color: #fff; /* Default text color */
+        }
+        .card {
+            background: rgba(255, 255, 255, 0.9); /* White background for cards with some transparency */
+            border: none; /* Remove default border */
+            color: #000; /* Black text for better readability */
+        }
+        .footer {
+            background-color: rgba(0, 0, 0, 0.8); /* Dark footer */
+            color: #fff;
+        }
+        h1 {
+            color: #000; /* Change title color to black */
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="#"><img src="logo1.png" alt="logo" height="40"> Care Compass Hospital</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="hospital_services.html">Hospital Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="laboratory_services.html">Laboratory Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container my-5">
+        <h1 class="text-center">Hospital Services</h1>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h5 class="card-title">Emergency Care</h5>
+                        <p class="card-text">Comprehensive emergency services available 24/7.</p>
+                        <p class="card-text"><strong>Price:</strong> $200</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h5 class="card-title">Maternity Care</h5>
+                        <p class="card-text">Personalized maternity care for mothers and newborns.</p>
+                        <p class="card-text"><strong>Price:</strong> $1500</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h5 class="card-title">Surgical Services</h5>
+                        <p class="card-text">State-of-the-art surgical procedures.</p>
+                        <p class="card-text"><strong>Price:</strong> $3000</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h5 class="card-title">Pediatric Care</h5>
+                        <p class="card-text">Specialized medical care for infants and children.</p>
+                        <p class="card-text"><strong>Price:</strong> $400</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h5 class="card-title">Cardiology Services</h5>
+                        <p class="card-text">Comprehensive heart health evaluations and treatments.</p>
+                        <p class="card-text"><strong>Price:</strong> $250</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h5 class="card-title">Orthopedic Services</h5>
+                        <p class="card-text">Expert care for musculoskeletal issues.</p>
+                        <p class="card-text"><strong>Price:</strong> $600</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="feedback-button" onclick="toggleFeedback()">Feedback</div>
+
+
+    <div id="feedback-form" class="feedback-form" style="display:none;">
+        <h4>Send us your Feedback</h4>
+        <form action="feedback.php" method="POST">
+            <textarea name="feedback" class="form-control" placeholder="Your feedback..." required></textarea>
+            <button type="submit" class="btn btn-primary mt-2">Send</button>
+        </form>
+    </div> 
+
+    
+    <!-- Bootstrap JS and dependencies -->
+    <script src="bootstrap-5.3.3-dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="scripts/main.js"></script>
+
+    <script>
+        function toggleFeedback() {
+            let form = document.getElementById('feedback-form');
+            form.style.display = (form.style.display === 'block') ? 'none' : 'block';
+        }
+
+        function submitFeedback() {
+            let feedback = document.getElementById('feedback-text').value;
+            if (feedback.trim() === '') {
+                alert('Please enter your feedback.');
+                return;
+            }
+            alert('Thank you for your feedback!');
+            document.getElementById('feedback-text').value = '';
+            document.getElementById('feedback-form').style.display = 'none';
+        }
+    </script>
+
+
+
+
+    <!-- Footer -->
+    <footer class="footer text-center py-2">
+        <p>&copy; 2024 Care Compass Hospital. All rights reserved.</p>
+    </footer>
+
+    <script src="bootstrap-5.3.3-dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

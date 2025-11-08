@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Care Compass Hospital</title>
+    <link rel="stylesheet" href="bootstrap-5.3.3-dist/css/bootstrap.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: url('contactus.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: #fff;
+            padding: 40px;
+        }
+        .container {
+            max-width: 900px;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .contact-form {
+            flex: 1;
+            padding: 20px;
+        }
+        .contact-form h2 {
+            color: #333;
+            text-align: center;
+        }
+        label {
+            font-weight: bold;
+            display: block;
+            margin-top: 10px;
+            color: #000;
+        }
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        input[type="submit"] {
+            background-color: #5cb85c;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 10px;
+        }
+        input[type="submit"]:hover {
+            background-color: #4cae4c;
+        }
+        .contact-info {
+            flex: 1;
+            padding: 20px;
+            text-align: center;
+            background: #f8f9fa;
+            border-radius: 10px;
+        }
+        .contact-info h3 {
+            color: #333;
+        }
+        .contact-info p {
+            color: #555;
+        }
+        .contact-info img {
+            width: 100%;
+            border-radius: 10px;
+            margin-top: 10px;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="contact-form">
+        <h2>Contact Us</h2>
+        <form action="contact.php" method="post">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="subject">Subject:</label>
+            <input type="text" id="subject" name="subject" required>
+
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+    
+    <div class="contact-info">
+        <h3>Care Compass Hospital</h3>
+        <p>Maligawaththa Road, Colombo 4</p>
+        <p><strong>Phone:</strong> 011-2222444 | 011-3333444</p>
+        <p><strong>Email:</strong> carecompass@gmail.com</p>
+        <p><strong>Support:</strong> info@carecompass.com</p>
+        <img src="carecompass.jpg" alt="Care Compass Hospital">
+    </div>
+</div>
+    <!-- Feedback Button -->
+    <div class="feedback-button" onclick="toggleFeedback()">Feedback</div>
+    
+    <!-- Feedback Form -->
+    <div id="feedback-form" class="feedback-form" style="display:none;">
+        <h4>Send us your Feedback</h4>
+        <form action="feedback.php" method="POST">
+            <textarea name="feedback" class="form-control" placeholder="Your feedback..." required></textarea>
+            <button type="submit" class="btn btn-primary mt-2">Send</button>
+        </form>
+    </div>  
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="bootstrap-5.3.3-dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="scripts/main.js"></script>
+
+    <script>
+        function toggleFeedback() {
+            let form = document.getElementById('feedback-form');
+            form.style.display = (form.style.display === 'block') ? 'none' : 'block';
+        }
+
+        function submitFeedback() {
+            let feedback = document.getElementById('feedback-text').value;
+            if (feedback.trim() === '') {
+                alert('Please enter your feedback.');
+                return;
+            }
+            alert('Thank you for your feedback!');
+            document.getElementById('feedback-text').value = '';
+            document.getElementById('feedback-form').style.display = 'none';
+        }
+    </script>
+<footer class="footer">
+    <p>&copy; 2024 Care Compass Hospital. All rights reserved.</p>
+</footer>
+
+</body>
+</html>

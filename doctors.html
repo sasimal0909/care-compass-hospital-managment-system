@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="si">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctors List</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f9f9f9;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .doctor-card {
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 20px;
+            margin: 10px 0;
+            background-color: #fff;
+            display: flex;
+            align-items: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+        }
+        .doctor-card:hover {
+            transform: scale(1.02);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        .doctor-photo {
+            width: 100px;
+            height: 100px;
+            border-radius: 5px;
+            margin-right: 15px;
+            border: 3px solid #007BFF;
+        }
+        .doctor-info {
+            flex-grow: 1;
+        }
+        .doctor-name {
+            font-size: 1.5em;
+            color: #007BFF;
+            margin: 0;
+        }
+        .doctor-specialty {
+            font-weight: bold;
+            margin: 5px 0;
+        }
+        .doctor-contact, .doctor-email {
+            margin-top: 10px;
+            color: #777;
+        }
+        .full-details {
+            margin-top: 10px;
+            padding: 10px;
+            border-radius: 5px;
+            background-color: darkblue;
+            color: white;
+            transition: background-color 0.3s;
+        }
+    </style>
+</head>
+<body>
+
+<h1>List of Medical Professionals</h1>
+
+<div class="doctor-card" onclick="toggleColor(this)">
+    <img class="doctor-photo" src="d1.jpg" alt="Dr. Saman Wasuki">
+    <div class="doctor-info">
+        <div class="doctor-name">Dr. Saman Wasuki</div>
+        <div class="doctor-specialty">Infectious Disease Specialist</div>
+        <div class="doctor-contact">Phone: 071-1234567</div>
+        <div class="doctor-email">Email: saman.wasuki@example.com</div>
+    </div>
+</div>
+
+<div class="doctor-card" onclick="toggleColor(this)">
+    <img class="doctor-photo" src="d2.jpg" alt="Dr. Kumudu Peiris">
+    <div class="doctor-info">
+        <div class="doctor-name">Dr. Kumudu Peiris</div>
+        <div class="doctor-specialty">Joint Disease Specialist</div>
+        <div class="doctor-contact">Phone: 071-7654321</div>
+        <div class="doctor-email">Email: kumudu.peiris@example.com</div>
+    </div>
+</div>
+
+<div class="doctor-card" onclick="toggleColor(this)">
+    <img class="doctor-photo" src="d3.jpg" alt="Dr. Nadeem Wasoo">
+    <div class="doctor-info">
+        <div class="doctor-name">Dr. Nadeem Wasoo</div>
+        <div class="doctor-specialty">Therapeutic Specialist</div>
+        <div class="doctor-contact">Phone: 071-1112233</div>
+        <div class="doctor-email">Email: nadeem.wasoo@example.com</div>
+    </div>
+</div>
+
+<div class="doctor-card" onclick="toggleColor(this)">
+    <img class="doctor-photo" src="d4.jpg" alt="Dr. Nihala Madushan">
+    <div class="doctor-info">
+        <div class="doctor-name">Dr. Nihala Madushan</div>
+        <div class="doctor-specialty">Cardiologist</div>
+        <div class="doctor-contact">Phone: 071-4445566</div>
+        <div class="doctor-email">Email: nihala.madushan@example.com</div>
+    </div>
+</div>
+
+<div class="doctor-card" onclick="toggleColor(this)">
+    <img class="doctor-photo" src="d5.jpg" alt="Dr. Rohan Kumunaraja">
+    <div class="doctor-info">
+        <div class="doctor-name">Dr. Rohan Kumunaraja</div>
+        <div class="doctor-specialty">Social Medicine Specialist</div>
+        <div class="doctor-contact">Phone: 071-2223344</div>
+        <div class="doctor-email">Email: rohan.kumunaraja@example.com</div>
+    </div>
+</div>
+
+<div class="doctor-card" onclick="toggleColor(this)">
+    <img class="doctor-photo" src="d6.jpg" alt="Dr. Amilsa Neetha">
+    <div class="doctor-info">
+        <div class="doctor-name">Dr. Amilsa Neetha</div>
+        <div class="doctor-specialty">Mental Health Specialist</div>
+        <div class="doctor-contact">Phone: 071-5556677</div>
+        <div class="doctor-email">Email: amilsa.neetha@example.com</div>
+    </div>
+</div>
+
+<div class="doctor-card" onclick="toggleColor(this)">
+    <img class="doctor-photo" src="d7.jpg" alt="Dr. Ranaveera Hemantha">
+    <div class="doctor-info">
+        <div class="doctor-name">Dr. Ranaveera Hemantha</div>
+        <div class="doctor-specialty">Neurologist</div>
+        <div class="doctor-contact">Phone: 071-8889900</div>
+        <div class="doctor-email">Email: ranaveera.hemantha@example.com</div>
+    </div>
+</div>
+
+<script>
+    function toggleDetails(card) {
+        const colors = ['green', 'red', 'yellow', 'black', 'darkblue'];
+        let details = card.querySelector('.full-details');
+        let currentColor = details.style.backgroundColor;
+        let nextColor = colors[(colors.indexOf(currentColor) + 1) % colors.length];
+        details.style.backgroundColor = nextColor;
+        details.style.color = nextColor === 'black' || nextColor === 'darkblue' ? 'white' : 'black';
+    }
+</script>
+
+
+    <!-- Feedback Button -->
+    <div class="feedback-button" onclick="toggleFeedback()">Feedback</div>
+    
+    <!-- Feedback Form -->
+    <div id="feedback-form" class="feedback-form" style="display:none;">
+        <h4>Send us your Feedback</h4>
+        <form action="feedback.php" method="POST">
+            <textarea name="feedback" class="form-control" placeholder="Your feedback..." required></textarea>
+            <button type="submit" class="btn btn-primary mt-2">Send</button>
+        </form>
+    </div>  
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="bootstrap-5.3.3-dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="scripts/main.js"></script>
+
+    <script>
+        function toggleFeedback() {
+            let form = document.getElementById('feedback-form');
+            form.style.display = (form.style.display === 'block') ? 'none' : 'block';
+        }
+
+        function submitFeedback() {
+            let feedback = document.getElementById('feedback-text').value;
+            if (feedback.trim() === '') {
+                alert('Please enter your feedback.');
+                return;
+            }
+            alert('Thank you for your feedback!');
+            document.getElementById('feedback-text').value = '';
+            document.getElementById('feedback-form').style.display = 'none';
+        }
+    </script>
+
+    <!-- Footer -->
+    <footer class="footer text-black text-center py-2">
+        <p>&copy; 2024 Care Compass Hospital. All rights reserved.</p>
+        
+    </footer>
+
+
+</body>
+</html>

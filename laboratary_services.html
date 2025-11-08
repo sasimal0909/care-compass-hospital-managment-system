@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laboratory Services - Care Compass Hospital</title>
+    <link rel="stylesheet" href="bootstrap-5.3.3-dist/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <style>
+        body {
+            background: url('lab_services.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: #fff;
+        }
+        .card {
+            background: rgba(255, 255, 255, 0.9);
+            border: none;
+            color: #000;
+        }
+        .footer {
+            background-color: rgba(0, 0, 0, 0.8);
+            color: #fff;
+        }
+        h1 {
+            color: #000;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="#"><img src="logo1.png" alt="logo" height="40"> Care Compass Hospital</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="hospital_services.html">Hospital Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="laboratory_services.html">Laboratory Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
+                <!-- Search Form -->
+                <form class="d-flex">
+                    <input class="form-control me-2" type="search" id="searchBar" placeholder="Search Laboratory Services" aria-label="Search" onkeyup="searchServices()">
+                    <button class="btn btn-outline-primary" type="button">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container my-5">
+        <h1 class="text-center">Laboratory Services</h1>
+        <div class="row" id="serviceList">
+            <div class="col-md-4 service-card">
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h5 class="card-title">Blood Test</h5>
+                        <p class="card-text">Comprehensive blood analysis for various conditions.</p>
+                        <p class="card-text"><strong>Price:</strong> $50</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 service-card">
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h5 class="card-title">Urine Test</h5>
+                        <p class="card-text">Detailed urine analysis for health monitoring.</p>
+                        <p class="card-text"><strong>Price:</strong> $30</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 service-card">
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h5 class="card-title">X-Ray</h5>
+                        <p class="card-text">Advanced imaging for accurate diagnosis.</p>
+                        <p class="card-text"><strong>Price:</strong> $100</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 service-card">
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h5 class="card-title">MRI Scan</h5>
+                        <p class="card-text">High-resolution imaging for soft tissue evaluation.</p>
+                        <p class="card-text"><strong>Price:</strong> $300</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 service-card">
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h5 class="card-title">CT Scan</h5>
+                        <p class="card-text">Detailed cross-sectional imaging for comprehensive diagnosis.</p>
+                        <p class="card-text"><strong>Price:</strong> $250</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 service-card">
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h5 class="card-title">Cholesterol Test</h5>
+                        <p class="card-text">Monitoring cholesterol levels for heart health.</p>
+                        <p class="card-text"><strong>Price:</strong> $40</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 service-card">
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h5 class="card-title">Allergy Testing</h5>
+                        <p class="card-text">Identifying allergens through comprehensive testing.</p>
+                        <p class="card-text"><strong>Price:</strong> $70</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Feedback Button -->
+    <div class="feedback-button" onclick="toggleFeedback()">Feedback</div>
+
+    <div id="feedback-form" class="feedback-form" style="display:none;">
+        <h4>Send us your Feedback</h4>
+        <form action="feedback.php" method="POST">
+            <textarea name="feedback" class="form-control" placeholder="Your feedback..." required></textarea>
+            <button type="submit" class="btn btn-primary mt-2">Send</button>
+        </form>
+    </div> 
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="bootstrap-5.3.3-dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Search Functionality -->
+    <script>
+        function searchServices() {
+            let input = document.getElementById('searchBar').value.toLowerCase();
+            let services = document.getElementsByClassName('service-card');
+
+            for (let i = 0; i < services.length; i++) {
+                let title = services[i].getElementsByClassName('card-title')[0].innerText.toLowerCase();
+                if (title.includes(input)) {
+                    services[i].style.display = "block";
+                } else {
+                    services[i].style.display = "none";
+                }
+            }
+        }
+
+        function toggleFeedback() {
+            let form = document.getElementById('feedback-form');
+            form.style.display = (form.style.display === 'block') ? 'none' : 'block';
+        }
+    </script>
+
+    <!-- Footer -->
+    <footer class="footer text-center py-2">
+        <p>&copy; 2024 Care Compass Hospital. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

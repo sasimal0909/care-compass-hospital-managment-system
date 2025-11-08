@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Care Compass Hospital</title>
+    <link rel="stylesheet" href="bootstrap-5.3.3-dist/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="admin_login.css">
+    <link rel="stylesheet" type="text/css" href="feedback.css">
+    <style>
+        /* Background Image Style */
+        body {
+            background-image: url('doc_login.jpg'); /* Replace with your image path */
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="#"><img src="logo1.png" alt="logo" height="40"> Care Compass Hospital</a>
+        </div>
+    </nav>
+
+    <!-- Doctor Login Form Section -->
+    <section class="container my-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6 col-lg-4">
+                <div class="card shadow">
+                    <div class="card-body">
+                        <h4 class="card-title text-center mb-4">Doctor Login</h4>
+                        <form action="doctor_login.php" method="POST">
+                            <!-- Username -->
+                            <div class="mb-3">
+                                <label for="username" class="form-label">Username</label>
+                                <input type="text" class="form-control" id="username" name="username" placeholder="Enter username" required>
+                            </div>
+                            
+                            <!-- Password -->
+                            <div class="mb-3">
+                                <label for="password" class="form-label">Password</label>
+                                <input type="password" class="form-control" id="password" name="password" placeholder="Enter password" required>
+                            </div>
+
+                            <!-- Login Button -->
+                            <div class="d-grid gap-2">
+                                <button type="submit" class="btn btn-primary">Login</button>
+                            </div>
+                        </form>
+
+                        <!-- Signup Button -->
+                        <div class="text-center mt-3">
+                            <a href="doctor_signup.html" class="btn btn-outline-secondary">Sign Up</a>
+                        </div>
+
+                        <!-- Forgot Password Link -->
+                        <div class="text-center mt-3">
+                            <a href="forget_password.html">Forgot Password?</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="feedback-button" onclick="toggleFeedback()">Feedback</div>
+
+
+    <div id="feedback-form" class="feedback-form" style="display:none;">
+        <h4>Send us your Feedback</h4>
+        <form action="feedback.php" method="POST">
+            <textarea name="feedback" class="form-control" placeholder="Your feedback..." required></textarea>
+            <button type="submit" class="btn btn-primary mt-2">Send</button>
+        </form>
+    </div> 
+
+    
+    <!-- Bootstrap JS and dependencies -->
+    <script src="bootstrap-5.3.3-dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="scripts/main.js"></script>
+
+    <script>
+        function toggleFeedback() {
+            let form = document.getElementById('feedback-form');
+            form.style.display = (form.style.display === 'block') ? 'none' : 'block';
+        }
+
+        function submitFeedback() {
+            let feedback = document.getElementById('feedback-text').value;
+            if (feedback.trim() === '') {
+                alert('Please enter your feedback.');
+                return;
+            }
+            alert('Thank you for your feedback!');
+            document.getElementById('feedback-text').value = '';
+            document.getElementById('feedback-form').style.display = 'none';
+        }
+    </script>
+
+
+
+
+
+
+    <!-- Footer -->
+    <footer class="footer text-center py-4">
+        <p>&copy; 2024 Care Compass Hospital. All rights reserved.</p>
+    </footer>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="bootstrap-5.3.3-dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
